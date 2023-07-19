@@ -1,1 +1,3 @@
-console.log("hello world...");
+(async () => {
+  console.log("hello world");
+})();
