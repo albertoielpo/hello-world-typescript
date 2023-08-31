@@ -1,24 +1,23 @@
 {
-	"name": "node",
-	"version": "1.0.0",
-	"description": "hello-world-typescript",
-	"main": "dist/app.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "tsc && node dist/app.js",
-		"format": "prettier --write \"src/**/*.ts\"",
-		"compile": "tsc",
-		"lint": "eslint . --ext .ts"
-	},
-	"author": "Alberto Ielpo",
-	"license": "ISC",
-	"devDependencies": {
-		"@typescript-eslint/eslint-plugin": "^5.49.0",
-		"@typescript-eslint/parser": "^5.49.0",
-		"eslint": "^8.32.0",
-		"typescript": "^4.9.4",
-		"prettier": "~3.0.0"
-	},
-	"dependencies": {
-	}
+    "name": "node",
+    "version": "1.0.0",
+    "description": "hello-world-typescript",
+    "main": "dist/app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "tsc && node dist/app.js",
+        "format": "prettier --write \"src/**/*.ts\"",
+        "compile": "tsc",
+        "lint": "eslint . --ext .ts"
+    },
+    "author": "Alberto Ielpo",
+    "license": "ISC",
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.49.0",
+        "@typescript-eslint/parser": "^5.49.0",
+        "eslint": "^8.32.0",
+        "typescript": "^4.9.4",
+        "prettier": "~3.0.0"
+    },
+    "dependencies": {}
 }
