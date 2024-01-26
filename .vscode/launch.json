@@ -4,10 +4,17 @@
         {
             "type": "node",
             "request": "attach",
-            "name": "Attach Test",
+            "name": "Attach hello world",
             "skipFiles": ["<node_internals>/**"],
             "port": 9229,
             "restart": true
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch hello world",
+            "skipFiles": ["<node_internals>/**"],
+            "program": "${workspaceFolder}/dist/app.js"
         }
     ]
 }

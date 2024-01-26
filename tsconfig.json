@@ -14,7 +14,6 @@
         "incremental": true,
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": false,
-        "noFallthroughCasesInSwitch": false,
-        "resolveJsonModule": true
+        "noFallthroughCasesInSwitch": false
     }
 }
