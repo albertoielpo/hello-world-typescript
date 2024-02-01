@@ -6,7 +6,7 @@
     "scripts": {
         "test": "jest --no-cache  --detectOpenHandles --runInBand --forceExit",
         "start": "tsc && node dist/app.js",
-        "start:debug": "tsc -w && node --inspect=0.0.0.0 --trace-warnings dist/app.js",
+        "start:debug": "tsc && node --inspect=0.0.0.0 --trace-warnings dist/app.js",
         "format": "prettier --write \"src/**/*.ts\"",
         "compile": "tsc",
         "build": "tsc",
