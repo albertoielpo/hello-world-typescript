@@ -4,7 +4,6 @@ function getParentById(id: number): Promise<Person[]> {
             () => {
                 const person = DB.find((x) => x.id === id);
                 if (!person) {
-                    console.log(`reject for id ${id}`);
                     reject("Person not found");
                     return;
                 }
@@ -17,7 +16,6 @@ function getParentById(id: number): Promise<Person[]> {
                     }
                     parents.push(cur);
                 }
-                console.log(`resolve for id ${id}`);
                 resolve(parents);
             },
             Math.round(Math.random() * 100)
@@ -25,34 +23,27 @@ function getParentById(id: number): Promise<Person[]> {
     });
 }
 
-async function main2() {
-    try {
-        const parents = await getParentById(1);
-        console.log(parents);
-    } catch (error) {
-        console.log(error);
-    }
-    try {
-        const parents = await getParentById(10);
-        console.log(parents);
-    } catch (error) {
-        console.log(error);
-    }
-}
+function main() {
+    getParentById(1)
+        .then((parents) => {
+            console.log(parents);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
 
-async function main() {
-    const prs = await Promise.allSettled([getParentById(1), getParentById(10)]);
-    for (let parents of prs) {
-        if (parents.status === "fulfilled") {
-            console.log(parents.value);
-        } else {
-            console.log(parents.reason);
-        }
-    }
+    getParentById(10)
+        .then((parents) => {
+            console.log(parents);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
 }
 
 main();
 
+///
 const DB: Person[] = [
     {
         id: 1,

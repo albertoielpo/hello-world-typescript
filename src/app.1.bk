@@ -1,0 +1,68 @@
+function getParentById(id: number, cb: Function): void {
+    setTimeout(
+        () => {
+            const parents = [];
+            let error;
+            try {
+                const person = DB.find((x) => x.id === id);
+                if (!person) throw new Error("Person not found");
+
+                for (const parent of person.parentIds) {
+                    const cur = DB.find((x) => x.id === parent);
+                    if (!cur) throw new Error("Parent not found");
+                    parents.push(cur);
+                }
+            } catch (err: any) {
+                error = err.message ?? err;
+            }
+
+            cb(parents, error);
+        },
+        Math.round(Math.random() * 100)
+    );
+}
+
+function main() {
+    getParentById(1, function (parents: Person[], error: string) {
+        if (error) {
+            console.log(error);
+            return;
+        }
+        console.log(parents);
+    });
+
+    getParentById(10, function (parents: Person[], error: string) {
+        if (error) {
+            console.log(error);
+            return;
+        }
+        console.log(parents);
+    });
+}
+
+main();
+
+///
+const DB: Person[] = [
+    {
+        id: 1,
+        name: "Antonio",
+        parentIds: [2, 3]
+    },
+    {
+        id: 2,
+        name: "Marco",
+        parentIds: []
+    },
+    {
+        id: 3,
+        name: "Sandra",
+        parentIds: []
+    }
+];
+
+type Person = {
+    id: number;
+    name: string;
+    parentIds: number[]; // [1,2]
+};
