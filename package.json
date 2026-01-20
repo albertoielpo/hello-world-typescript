@@ -5,8 +5,8 @@
     "main": "dist/app.js",
     "scripts": {
         "build": "tsc",
-        "start": "tsc && node dist/src/app.js",
-        "start:debug": "tsc && node --inspect=0.0.0.0 --trace-warnings dist/src/app.js",
+        "start": "tsc && node dist/app.js",
+        "start:debug": "tsc && node --inspect=0.0.0.0 --trace-warnings dist/app.js",
         "format": "prettier --write \"src/**/*.ts\"",
         "test": "jest --no-cache  --detectOpenHandles --runInBand --forceExit"
     },

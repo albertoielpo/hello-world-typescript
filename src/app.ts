@@ -1,6 +1,6 @@
 import { registerController } from "@albertoielpo/ielpify";
 import Fastify from "fastify";
-import HomeController from "../home/home.controller";
+import HomeController from "./home/home.controller";
 
 const fastify = Fastify({ logger: true });
 fastify.log.level = process.env.LOG_LEVEL || "info";
