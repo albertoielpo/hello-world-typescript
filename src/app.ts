@@ -2,7 +2,8 @@ import { registerController } from "@albertoielpo/ielpify";
 import Fastify from "fastify";
 import HomeController from "../home/home.controller";
 
-const fastify = Fastify();
+const fastify = Fastify({ logger: true });
+fastify.log.level = process.env.LOG_LEVEL || "info";
 
 // Register controllers
 registerController(fastify, HomeController);
@@ -13,5 +14,4 @@ fastify.listen({ port: 3000 }, function (err, address) {
         fastify.log.error(err);
         process.exit(1);
     }
-    console.log(`Server is listening on ${address}`);
 });
